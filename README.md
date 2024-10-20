@@ -1,10 +1,14 @@
-# Votee: Cloud Engineer Technical Test
+# Python: Wordle Puzzle Game Solution
 
 ## **Overview**
 
 (a) Introduction
 
-Wordle is an addictive and popular word puzzle game where the player has to guess a hidden five-letter word within six attempts. Each guess receives feedback to indicate how close it is to the correct word. Green squares mean the letter is in the correct position, yellow squares mean the letter is in the word but in a different position, and gray squares mean the letter is not in the word at all.
+Wordle is an addictive and popular word puzzle game where the player has to guess a hidden five-letter word within six attempts.
+Each guess receives feedback to indicate how close it is to the correct word.
+Green squares mean the letter is in the correct position,
+yellow squares mean the letter is in the word but in a different position,
+and gray squares mean the letter is not in the word at all.
 
 (b) Example on the Guessing Flow
 
@@ -33,6 +37,7 @@ All letters are now in the correct position (green).
 Result: You successfully guessed the hidden word within three attempts.
 
 (c) Constants of Wordle
+
 Word Size: Typically five letters.
 
 Max Attempts: Six guesses.
@@ -41,9 +46,24 @@ Seed: Used to generate consistent puzzles.
 
 Feedback Colors: Green (correct position), Yellow (wrong position), Gray (not in word).
 
-The beauty of Wordle lies in its simplicity and the strategy involved in making educated guesses based on feedback. Whether you're playing casually or diving deep into strategy, it's a delightful brain teaser!
+The beauty of Wordle lies in its simplicity and the strategy involved in making educated guesses based on feedback.
+Whether you're playing casually or diving deep into strategy, it's a delightful brain teaser!
 
 ## **Usage**
+
+Install prequistes
+
+```bash
+make venv
+```
+
+Activate the vitural environment
+
+```bash
+source venv/Scripts/activate
+```
+
+Install requirmen
 
 To run the default setting of guess wordle, using following command
 
@@ -53,17 +73,15 @@ make run
 
 ## **Process**
 
-Step 1: Build enviornment
+Step 1: Build environment to create solution for the wordle puzzle game
 
-(a) Create folder `votee`
+(a) Add `__init__.py` and `guess_wordle.py`
 
-(b) Add `__init__.py` and `guess.py`
+(b) Add `requirements.txt`
 
-(c) Add `requirements.txt`
+(c) Add `.gitignore` for Python [https://github.com/github/gitignore/blob/main/Python.gitignore](https://github.com/github/gitignore/blob/main/Python.gitignore)
 
-(d) Add `.gitignore` for python [https://github.com/github/gitignore/blob/main/Python.gitignore](https://github.com/github/gitignore/blob/main/Python.gitignore)
-
-(e) Add `Makefile`
+(d) Add `Makefile`
 
 Step 2: Build first grant look of the program
 
