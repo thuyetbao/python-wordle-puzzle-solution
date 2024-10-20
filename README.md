@@ -2,7 +2,8 @@
 
 ## **Overview**
 
-This project aims to build a solution that automatically guesses the random word of a Wordle puzzle against the backend of Votee. The solution involves making API requests with specific parameters and analyzing the results to find the hidden word.
+This project aims to build a solution that automatically guesses the random word of a Wordle puzzle against the backend of Votee.
+The solution involves making API requests with specific parameters and analyzing the results to find the hidden word.
 
 Objective:
 
