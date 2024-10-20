@@ -2,52 +2,66 @@
 
 ## **Overview**
 
-(a) Introduction
+This project aims to build a solution that automatically guesses the random word of a Wordle puzzle against the backend of Votee. The solution involves making API requests with specific parameters and analyzing the results to find the hidden word.
 
-Wordle is an addictive and popular word puzzle game where the player has to guess a hidden five-letter word within six attempts.
-Each guess receives feedback to indicate how close it is to the correct word.
-Green squares mean the letter is in the correct position,
-yellow squares mean the letter is in the word but in a different position,
-and gray squares mean the letter is not in the word at all.
+Objective:
 
-(b) Example on the Guessing Flow
+- [x] Automate the Wordle guessing process.
 
-First Guess: Suppose the hidden word is "CRANE" and your guess is "CLOUD".
+- [x] Utilize a backend API to submit guesses and receive feedback.
 
-"C" is in the correct position (green).
+- [x] Make multiple attempts to uncover the hidden word.
 
-"L", "O", and "U" are not in the word (gray).
+Components:
 
-"D" is also not in the word (gray).
+(a) Build a solution to guess the random word of Wordle puzzle against the backend of Votee
+API Integration: Connect to the Wordle-like puzzle API provided by Votee.
 
-Second Guess: Based on the feedback, you guess "CRATE".
+Guessing Algorithm: Implement a strategy to guess the hidden word.
 
-"C" is still correct (green).
+Data Handling: Process and analyze the feedback from the API.
 
-"R" is correct but in the wrong position (yellow).
+(b) Make requests with seed, size, and guessed words
 
-"A" is correct but in the wrong position (yellow).
+API Endpoint: [https://wordle.votee.dev:8000/random](https://wordle.votee.dev:8000/random)
 
-"T" and "E" are correct but in the wrong position (yellow).
+Parameters:
 
-Third Guess: With more refined feedback, you guess "CRANE".
+seed: A fixed value to ensure consistent puzzles.
 
-All letters are now in the correct position (green).
+size: The number of letters in the word (typically 5).
 
-Result: You successfully guessed the hidden word within three attempts.
+guess: The word being guessed.
 
-(c) Constants of Wordle
+(c) Feedback and Results
 
-Word Size: Typically five letters.
+API Response: The API returns a list of buckets, each containing:
 
-Max Attempts: Six guesses.
+| Field  | Description                     | Data Type                            |
+| ------ | ------------------------------- | ------------------------------------ |
+| slot   | Position of the character.      | Int                                  |
+| guess  | The guessed character.          | String                               |
+| result | Result of the guessed character | Enum[`absent`, `present`, `correct`] |
 
-Seed: Used to generate consistent puzzles.
+Note:
 
-Feedback Colors: Green (correct position), Yellow (wrong position), Gray (not in word).
+absent: The letter is not in the word.
 
-The beauty of Wordle lies in its simplicity and the strategy involved in making educated guesses based on feedback.
-Whether you're playing casually or diving deep into strategy, it's a delightful brain teaser!
+present: The letter is in the word but in a different position.
+
+correct: The letter is in the correct position.
+
+(d) Example Guessing Flow
+
+Initialize: Set the seed and size parameters.
+
+First Guess: Make an initial random guess.
+
+Process Feedback: Analyze the response to refine the next guess.
+
+Iterate: Continue making guesses and refining based on feedback.
+
+Conclude: Stop when the hidden word is correctly guessed.
 
 ## **Usage**
 
@@ -85,7 +99,7 @@ Step 1: Build environment to create solution for the wordle puzzle game
 
 Step 2: Build first grant look of the program
 
-First, prompt
+First, prompt to have the first stage of program
 
 ```txt
 Write me an Python 3 program that
@@ -94,7 +108,9 @@ Write me an Python 3 program that
 (c) Constrant: Using httpx for request to the API, Using polars for dataframe, tabular
 ```
 
-Then install
+Then install the related concepts for project: codebase, scripts, Makefile
+
+Step 3: Build an sequence of how the way we handle that
 
 ```txt
 Can you describe me the way to handle that with Mermaid diagram
@@ -135,20 +151,22 @@ API returns the response.
 
 Script processes the response and handles the result.
 
-If the guess is correct, the script breaks out of the loop and prints "Correct guess!"
+- If the guess is correct, the script breaks out of the loop and prints "Correct guess!"
 
-If the guess is incorrect, the script updates the guess and repeats the process.
+- If the guess is incorrect, the script updates the guess and repeats the process.
 
-Second fix
+Step 4: Based on the idea, interate with try and fix the problem
+
+Example:
 
 ```txt
 Fix this `AttributeError: 'list' object has no attribute 'get'`
 and using API from You can find the API documentation at the following link: https://wordle.votee.dev:8000/redoc
 ```
 
-Then using Codeium to handle that with example tutorial link
+Step 5: Handle the idea, flow of the scripts, rewrite the logic with supported packages
 
-Prompt `Introduction`
+Step 6: Rewrite documentation with Copilot
 
 ```txt
 Write me the overview of the wordle guess
@@ -157,8 +175,12 @@ Write me the overview of the wordle guess
 (c) The constant of the wordle (size, seed, ...)
 ```
 
-## Note
+## **Note**
 
 AI Code program: Using Copilot, Codedium
 
-Tutorial: <https://thamara.dev/posts/guessing-better-in-wordle/>
+Documentation: Copilot
+
+Tutorial:
+
+- <https://thamara.dev/posts/guessing-better-in-wordle/>
