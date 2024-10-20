@@ -1,0 +1,4 @@
+name: &project_name Python Puzzle Solution
+version: "1.0.31"
+revision: "20241020"
+description: "Automatically guesses the random word of a Wordle puzzle"
